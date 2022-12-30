@@ -1,11 +1,190 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
 :root {
-    --primary-color: hsl(172,67%,45%);
-    --very-dark-cyan:  hsl(183, 100%, 15%);
-    --dark-grayish-cyan:hsl(186, 14%, 43%);
-    --grayish-cyan:hsl(184, 14%, 56%);
-    --light-grayish-cyan:hsl(185, 41%, 84%);
-    --very-light-grayish-cyan:hsl(189, 41%, 97%);
+    --main-border-radius: 1rem;
+    --input-border-radius: .2rem;
+    --primary-color: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
+    font-size: 24px;
 }
+
+* {
+    font-family: 'Space Mono', sans-serif;
+}
+
+body {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--light-grayish-cyan);
+}
+
+header {
+    padding: 40px 0;
+    width: 5rem;
+}
+
+main {
+    background-color: var(--white);
+    border-radius: var(--main-border-radius);
+    padding: 1.2rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+main>.main-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main>.main-input section:not(main > .main-input section:last-child) {
+    margin-bottom: 20px;
+}
+
+main>.main-input h2 {
+    font-size: .6rem;
+    margin-bottom: 5px;
+    color: var(--dark-grayish-cyan);
+}
+
+main>.main-input .input {
+    position: relative;
+}
+
+main>.main-input .input>img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: .7rem;
+}
+
+main>.main-input section.tip>.radio-buttons>input,
+main>.main-input .input>input {
+    border-radius: var(--input-border-radius);
+    border: 0;
+    background-color: var(--very-light-grayish-cyan);
+    padding: 5px 15px;
+    text-align: right;
+    color: var(--very-dark-cyan);
+}
+
+main>.main-input .input>input {
+    width: 100%;
+}
+
+main>.main-input .input>input::placeholder {
+    color: var(--very-dark-cyan);
+}
+
+main>.main-input section.tip>.radio-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 1.2rem);
+    grid-template-rows: auto;
+    width: 100%;
+}
+
+/* margins for radio buttons including custom-tip */
+main>.main-input section.tip>.radio-buttons>* {
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+/* styling for radio buttons */
+main>.main-input section.tip>.radio-buttons>.button-item {
+    text-align: center;
+    color: var(--very-light-grayish-cyan);
+    background-color: var(--very-dark-cyan);
+    border: none;
+    border-radius: var(--input-border-radius);
+    padding: 5px 15px;
+    transition: all 0.1s linear;
+    user-select: none;
+    cursor: pointer;
+}
+
+main>.main-input section.tip>.radio-buttons>input::placeholder {
+    color: var(--dark-grayish-cyan);
+}
+
+/* hover for all buttons */
+main>.main-input section.tip>.radio-buttons>.button-item:hover, #reset:hover {
+    color: var(--very-dark-cyan);
+    background-color: var(--light-grayish-cyan);
+}
+
+main>.main-input section.tip>.radio-buttons>.button-item:active, main>.main-input section.tip>.radio-buttons>.button-item.active {
+    color: var(--very-dark-cyan);
+    background-color: var(--primary-color);
+}
+
+main>.main-output {
+    background-color: var(--very-dark-cyan);
+    border-radius: var(--input-border-radius);
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main>.main-output section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main>.main-output section {
+    margin-bottom: 20px;
+}
+
+main>.main-output section>.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+main>.main-output section>.text>span:first-child {
+    color: white;
+    font-size: .6rem;
+}
+
+main>.main-output section>.text>span:last-child {
+    color: var(--grayish-cyan);
+    font-size: .5rem;
+}
+
+main>.main-output section>.amount {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+main>.main-output button {
+    width: 100%;
+    padding: 5px 0;
+    background-color: var(--primary-color);
+    color: var(--very-dark-cyan);
+    font-size: .7rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: var(--input-border-radius);
+    justify-content: flex-end;
+}
+
+@media (min-width: 500px) {
+    main {
+        display: flex;
+        gap: 1rem;
+    }
+
+    main>.main-output {
+        width: 100%;
+    }
+}
+

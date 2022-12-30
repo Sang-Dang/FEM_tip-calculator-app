@@ -10,56 +10,57 @@
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
-  <img src="images/logo.svg" alt="SPLITTER Logo">
-  <div class="container">
-    <div class="input">
-      <div class="bill">
-        <h5>
-          Bill
-        </h5>
-        <input type="text" id="bill">
-      </div>
-      <div class="tip">
-        <h5>
-          Select Tip %
-        </h5>
-        <div class="radiobuttons">
-          <div class="button">5%</div>
-          <div class="button">10%</div>
-          <div class="button">15%</div>
-          <div class="button">20%</div>
-          <div class="button">50%</div>
-          <input type="text" placeholder="Custom" id="custom-tip">
+  <header>
+    <img src="images/logo.svg" alt="SPLITTER Logo">
+  </header>
+  <main>
+    <div class="main-input">
+      <section class="bill">
+        <h2>Bill</h2>
+        <div class="input">
+          <img src="images/icon-dollar.svg" alt="Dollar Icon">
+          <input type="number" placeholder="0" id="input-bill" class="main-input-box">
         </div>
-      </div>
-      <div class="people">
-        <h5>
-          Number of people
-        </h5>
-        <input type="text" id="number-people">
-      </div>
+      </section>
+      <section class="tip">
+        <h2>Select Tip %</h2>
+        <div class="radio-buttons">
+          <div class="button-item">5%</div>
+          <div class="button-item">10%</div>
+          <div class="button-item">15%</div>
+          <div class="button-item">25%</div>
+          <div class="button-item">50%</div>
+          <input type="text" placeholder="Custom" id="input-custom-tip">
+        </div>
+      </section>
+      <section class="people">
+        <h2>Number of People</h2>
+        <div class="input">
+          <img src="images/icon-person.svg" alt="Person icon">
+          <input type="number" placeholder="0" id="input-people" class="main-input-box">
+        </div>
+      </section>
     </div>
-    <div class="output">
-
+    <div class="main-output">
+      <div class="data">
+        <section class="tip-amount">
+          <div class="text">
+            <span>Tip Amount</span>
+            <span>/ person</span>
+          </div>
+          <div class="amount">$4.27</div>
+        </section>
+        <section class="total-amount">
+          <div class="text">
+            <span>Total</span>
+            <span>/ person</span>
+          </div>
+          <div class="amount">$32.79</div>
+        </section>
+      </div>
+      <button id="reset" onclick="reset();">Reset</button>
     </div>
-  </div>
-
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
+  </main>
 
   <script src="js/script.js"></script>
 </body>
