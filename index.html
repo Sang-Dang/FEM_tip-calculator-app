@@ -5,20 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/reset.css">
   <title>Frontend Mentor | Tip calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <img src="images/logo.svg" alt="SPLITTER Logo">
+  <div class="container">
+    <div class="input">
+      <div class="bill">
+        <h5>
+          Bill
+        </h5>
+        <input type="text" id="bill">
+      </div>
+      <div class="tip">
+        <h5>
+          Select Tip %
+        </h5>
+        <div class="radiobuttons">
+          <div class="button">5%</div>
+          <div class="button">10%</div>
+          <div class="button">15%</div>
+          <div class="button">20%</div>
+          <div class="button">50%</div>
+          <input type="text" placeholder="Custom" id="custom-tip">
+        </div>
+      </div>
+      <div class="people">
+        <h5>
+          Number of people
+        </h5>
+        <input type="text" id="number-people">
+      </div>
+    </div>
+    <div class="output">
 
-  Bill
+    </div>
+  </div>
 
-  Select Tip %
   5%
   10%
   15%
@@ -35,10 +60,7 @@
   / person
 
   Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
