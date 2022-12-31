@@ -197,6 +197,9 @@ main>.main-output section>.text>span:last-child {
 main>.main-output section>.amount {
     color: var(--primary-color);
     font-size: 1rem;
+    text-align: right;
+    width: 70%;
+    overflow-y: auto;
 }
 
 main>.main-output button {
@@ -211,7 +214,7 @@ main>.main-output button {
     justify-content: flex-end;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 700px) {
     main {
         display: flex;
         gap: 1rem;
