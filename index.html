@@ -34,7 +34,10 @@
         </div>
       </section>
       <section class="people">
-        <h2>Number of People</h2>
+        <div class="text">
+          <h2>Number of People</h2>
+          <span id="errormsg">Can't be zero</span>
+        </div>
         <div class="input">
           <img src="images/icon-person.svg" alt="Person icon">
           <input type="number" placeholder="0" id="input-people" class="main-input-box">
@@ -48,14 +51,14 @@
             <span>Tip Amount</span>
             <span>/ person</span>
           </div>
-          <div class="amount">$4.27</div>
+          <div class="amount" id="tip-amount"></div>
         </section>
         <section class="total-amount">
           <div class="text">
             <span>Total</span>
             <span>/ person</span>
           </div>
-          <div class="amount">$32.79</div>
+          <div class="amount" id="total"></div>
         </section>
       </div>
       <button id="reset" onclick="reset();">Reset</button>

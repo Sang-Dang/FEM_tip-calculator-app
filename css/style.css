@@ -44,7 +44,7 @@ main>.main-input {
     justify-content: space-between;
 }
 
-main>.main-input section:not(main > .main-input section:last-child) {
+main>.main-input section {
     margin-bottom: 20px;
 }
 
@@ -54,6 +54,7 @@ main>.main-input h2 {
     color: var(--dark-grayish-cyan);
 }
 
+/* INPUT FIELDS */
 main>.main-input .input {
     position: relative;
 }
@@ -63,12 +64,13 @@ main>.main-input .input>img {
     top: 50%;
     transform: translateY(-50%);
     left: .7rem;
+    user-select: none;
 }
 
 main>.main-input section.tip>.radio-buttons>input,
 main>.main-input .input>input {
     border-radius: var(--input-border-radius);
-    border: 0;
+    border: none;
     background-color: var(--very-light-grayish-cyan);
     padding: 5px 15px;
     text-align: right;
@@ -83,6 +85,13 @@ main>.main-input .input>input::placeholder {
     color: var(--very-dark-cyan);
 }
 
+main>.main-input .input>input:focus,
+main>.main-input section.tip>.radio-buttons>input:focus {
+    outline: none;
+    border: 2px solid var(--primary-color);
+}
+
+/* RADIO BUTTONS */
 main>.main-input section.tip>.radio-buttons {
     display: grid;
     grid-template-columns: repeat(2, 50%);
@@ -115,15 +124,40 @@ main>.main-input section.tip>.radio-buttons>input::placeholder {
 }
 
 /* hover for all buttons */
-main>.main-input section.tip>.radio-buttons>.button-item:hover, #reset:hover {
+main>.main-input section.tip>.radio-buttons>.button-item:hover,
+#reset:hover {
     color: var(--very-dark-cyan);
     background-color: var(--light-grayish-cyan);
 }
 
-main>.main-input section.tip>.radio-buttons>.button-item:active, main>.main-input section.tip>.radio-buttons>.button-item.active {
+main>.main-input section.tip>.radio-buttons>.button-item:active,
+main>.main-input section.tip>.radio-buttons>.button-item.active {
     color: var(--very-dark-cyan);
     background-color: var(--primary-color);
 }
+
+/* NUMBER OF PEOPLE ERROR */
+main>.main-input section.people>.text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main>.main-input section.people>.text>span {
+    font-size: .6rem;
+    color: red;
+    opacity: 0;
+}
+
+main>.main-input section.people>.input>input.error {
+    border: 2px solid red;
+}
+/* 
+
+OUTPUT
+
+*/
+
 
 main>.main-output {
     background-color: var(--very-dark-cyan);
@@ -187,4 +221,3 @@ main>.main-output button {
         width: 100%;
     }
 }
-
